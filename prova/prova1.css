@@ -1,0 +1,115 @@
+/* Navegador superior móvel */
+div.menu-superior {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+.btn-3d {
+    background-color: #555;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Dropdown */
+.conteudo-dropdown {
+    display: none;
+    position: relative;
+    background-color: hsl(0, 0%, 33%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+div.dropdown:hover .conteudo-dropdown {
+    display: block;
+    color: #f0f0f0;
+}
+
+.dropdown {
+   position: relative;
+}
+
+.item-dropdown {
+    color: #f0f0f0;
+    border: 2px;
+}
+
+/* Barra de navegação móvel lateral esquerda */
+div.menu-lateral {
+    background-color: #555;
+    width: 20vw;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+div.menu-lateral button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Conteúdo */
+div.conteudo-central {
+    display: flex;
+    flex-direction: row;
+}
+
+div.conteudo {
+    margin-left: 20vw;
+    width: 80vw;
+    min-height: 1200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 0;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    div.menu-lateral {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+
+    div.conteudo-central {
+        flex-direction: column;
+    }
+
+    div.conteudo {
+    }
+}
+
+/* Componente de loading */
+.loading-spinner {
+    display: flex; /* Define um layout flex pra centralizar o spinner vertical e horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente no centro da div  pai */
+    align-items: center; /* Centraliza o conteúdo verticalmente no centro da div pai */
+}
+
+.loader {
+    border: 4px solid #333; /* espessura e a cor das bordas do spinner */
+    border-top: 4px solid #555; /* cor da borda superior */
+    border-radius: 50%; /* deixa o spinner circular */
+    width: 30px; /* largura do spinner */
+    height: 30px; /*altura do spinner */
+    animation: spin 2s linear infinite; /* Aplica a animação "spin" pra girar o spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* Define a posição inicial de rotação */
+    100% { transform: rotate(360deg); } /* Define a posição final de rotação */
+}
